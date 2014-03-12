@@ -1,0 +1,10 @@
+@(products: List[models.Product])
+
+@index("Listing all products") {
+	Wellcome! Here is a list of all our cars (@products.size() in total):<br>
+	<ul>
+		@for(product <- products){
+			<li><a href="/show-one-product/@product.getId()">@product.getName()</a></li>
+		}
+	</ul>
+}

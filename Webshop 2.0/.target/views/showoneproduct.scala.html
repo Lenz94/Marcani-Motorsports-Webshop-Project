@@ -1,0 +1,6 @@
+@(product: models.Product)
+
+@index("Showing car") {
+	Car name: @product.getName().<br>
+	Price: @product.getPrice():-
+}
