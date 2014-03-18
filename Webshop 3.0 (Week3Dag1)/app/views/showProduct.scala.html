@@ -1,0 +1,10 @@
+@* showProduct Template File *@
+@(product: Product)
+
+@main("Welcome to Play.") {
+<h1>Details for product</h1>
+
+<ul>
+<li>Name: @product.getName() <br><li>Description:  @product.getDescription </li><li>Price: @product.getCost() </li></li>
+</ul>
+}

@@ -1,0 +1,10 @@
+@* showCategory Template File *@
+@(category: Category)
+
+@main("Welcome to Play.") {
+<h1>Details for category</h1>
+
+<ul>
+<li>Name: @category.getCategoryName()<br><li>List:  @category.getCategoryList()</li></li>
+</ul>
+}
