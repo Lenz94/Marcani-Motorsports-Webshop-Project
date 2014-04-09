@@ -1,0 +1,10 @@
+@* showShoppingBasket Template File *@
+@(shoppingBasket: ShoppingBasket)
+
+@main("Welcome to Play.") {
+<h1>Shopping Basket</h1>
+
+<ul>
+<li>Quantity: @shoppingBasket.getQuantity()<br></li>
+</ul>
+}

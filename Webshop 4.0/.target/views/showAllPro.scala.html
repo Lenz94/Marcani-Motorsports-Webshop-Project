@@ -1,0 +1,18 @@
+@* showAllPro Template File *@
+@(products: List[Product])
+@main("CarWebshop") {
+	<h4>Our latest products (@products.size).</h4>
+
+	<ul>
+		@for(product <- products){
+			<li><a href="/product/@product.getProductId()">@product.getProductName()</a></li>
+		}
+	</ul>
+	<p><a href="@routes.ProductController.newProductForm">New product</a></p>
+
+	<ul>
+		@for(product <- products){
+		<li>@product.getProductName() - Category name: @product.category.getCategoryName()</li>
+		}
+	</ul>
+}
