@@ -1,0 +1,38 @@
+
+@(products: List[Product], categories: List[Category], users: List[User], shopping: List[ShoppingBasket])
+
+
+@main("CarWebshop") {
+	<h4>List of all cars (@products.size).</h4>
+	
+	<ul>
+		@for(product <- products){
+			<li><a href="/product/@product.getProductId()">@product.getProductName()</a></li>
+		}
+	</ul>
+	
+	<h4>Categories (@categories.size).</h4>
+	
+	<ul>
+		@for(category <- categories){
+			<li><a href="/category/@category.getCategoryId()">@category.getCategoryName()</a></li>
+		}
+	</ul>
+	
+	<h4>Users (@users.size).</h4>
+	
+	<ul>
+		@for(user <- users){
+			<li><a href="/user/@user.getUserId()">@user.getFirstName() @user.getLastName()</a></li>
+		}
+	</ul>
+	
+	
+	<img src="@routes.Assets.at("images/sports-cars.png")" alt="indexpic" width="350" height="120" style="
+	 position: absolute;
+	 top: 20%;
+	 right: 20%;
+	 
+	 "</img>
+	
+}

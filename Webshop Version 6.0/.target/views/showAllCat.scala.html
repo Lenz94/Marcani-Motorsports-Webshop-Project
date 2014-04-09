@@ -1,0 +1,23 @@
+@* showAllPro Template File *@
+@(categories: List[Category])
+@main("CarWebshop") {	
+	<p><img src="@routes.Assets.at("images/showroom2.jpg")" width="380" height="200" alt="showroom2"</img></p>
+	
+	<div style="position: absolute; top: 20%; left: 40%;">
+	<h4>Categories (@categories.size).</h4>
+
+	<ul>
+		@for(category <- categories){
+			<li><a href="/category/@category.getCategoryId()">@category.getCategoryName()</a></li>
+		}
+	</ul>
+	<p><a href="@routes.CategoryController.newCategoryForm">New category</a></p>
+
+	<ul>
+		@for(category <- categories){
+		<li>@category.getCategoryName()</li>
+		}
+	</ul>
+	</div>
+}
+	
