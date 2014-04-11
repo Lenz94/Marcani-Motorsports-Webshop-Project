@@ -1,0 +1,86 @@
+@(message: String)
+ 
+@main("Welcome to Play") {
+  <h1>Welcome To Stockholm!</h1>
+    <ul id="users"></ul>
+    
+    <hr>
+    
+    <button type="button" class="btn btn-default" id="create-new-user">Create new</button>
+    
+    <script>
+    	function loadListOfUsers(){
+			$('#users').empty();
+        	
+			$.get('/users', function(users){
+				$.each(users, function(arrayIndex, user){
+					$('<li>')
+					.append(user.firstName)
+					.append(', ')
+					.append(user.lastName)
+					.append(', ')
+					.append(user.phoneNumber)
+					.append(' (')
+					.append(user.userid)
+					.append(')')
+					.append(' ')
+					.append(
+						$('<button>')
+						.text('GET')
+						.click(function(){
+							location.href = "/users/" + user.userid;
+						})
+					)
+					.append(' ')
+					.append(
+						$('<button>')
+						.text('Delete')
+						.click(function(){
+							$.ajax({
+								url: '/users/' + user.userid,
+								type: 'DELETE'
+							})
+							.always(function(){
+								loadListOfUsers();
+							});
+						})
+					)
+					.append(' ')
+					.append(
+						$('<button>')
+						.text('Update')
+						.click(function(){
+							$.ajax({
+								url: '/users/' + user.userid,
+								type: 'PUT',
+								data: {
+									firstName: prompt("Your name please?", user.firstName),
+									lastName: prompt("Your lastname please?", user.lastName),
+									phoneNumber: prompt("Your phoneNumber please?", user.phoneNumber)
+								}
+							})
+							.always(loadListOfUsers);
+						})
+					)
+					.appendTo('#users');
+				});
+			});
+    	}
+ 
+    	$(loadListOfUsers);
+    	
+		$('#create-new-user').click(function(){
+			$.ajax({
+				url: '/users',
+				type: 'PUT',
+				data: {
+					firstName: prompt("Your name please?"),
+					lastName: prompt("Your lastname please?"),
+					phoneNumber: prompt("Your phoneNumber please?")
+				}
+			})
+			.always(loadListOfUsers);
+		});
+    </script>
+ 
+}
