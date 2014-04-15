@@ -1,0 +1,44 @@
+@* listAllCart Template File *@
+@(shoppingbasket: List[ShoppingBasket])
+@main("Cart"){
+	<table class="form1 table table-bordered" style="
+    width:600px;
+    margin-top: 2%;
+    margin-left: 2%;
+    background-color:#3B3B3B;
+    font-family:"Times New Roman",Georgia,Serif;
+    font color :red;
+">
+        <thead>
+          <tr>
+          	<th>Quantity</th>
+            <th>Product</th>
+            <th>Cost</th>
+            <th>Category</th>
+            <th>Customer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          	@for(shoppingbasket <- shoppingbasket){
+         		 <td>@shoppingbasket.getQuantity</td>
+           		<td>@shoppingbasket.getProduct</td>
+           		<td>@(shoppingbasket.getQuantity * shoppingbasket.getProduct.getCost)</td>
+           		<td>@shoppingbasket.getProduct.category.getCategoryName</td>
+           		<td>@shoppingbasket.getUser</td>
+           		<td>
+           		<form action="/change-cart" method="post" role="form">
+           		<button id="delete-product" type="submit" class="btn btn-default" name="delete" value="@shoppingbasket.getShoppingBaskedId" style="background-color: #FBEFF8;">
+           		<i class = "glyphicon glyphicon-trash"></i>
+           		</button></form></td>		
+          		</tr>
+         	 	}
+        </tbody>
+      </table>
+      <form action="/order-product" method="post" role="form">
+      <label for="deleteall"</label>
+		<button type="submit" class="btn btn-default" name="deleteall" value="yes" style="margin-left: 2%;">Order</button></a>
+		</form>
+      <p></p>
+         
+}
