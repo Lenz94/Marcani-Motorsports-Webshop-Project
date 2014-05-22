@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home" >
+	
+    <TextView 
+        android:id="@+id/products"
+    	android:layout_width="match_parent" 
+    	android:layout_height="wrap_content"   
+    	android:text="@string/products"
+    	android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:shadowColor="#000000"
+    	android:shadowDx="0.0"
+    	android:shadowDy="0.0"
+    	android:shadowRadius="10.0"
+    	android:layout_marginTop="5dp"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginRight="10dp"
+    	android:background="@drawable/button_rounded_corners" 
+    />
+    
+   	<ListView 
+   	    android:id="@+id/list_view_products"
+   	    android:layout_width="match_parent"
+   	    android:layout_height="match_parent"
+   	    android:layout_marginTop="10dp"
+   	    android:layout_marginLeft="10dp"
+   	    android:layout_marginRight="10dp"
+   	    android:dividerHeight="10dp"
+   	    android:layout_below="@+id/products">
+   	    
+   	</ListView>
+   	
+   	
+
+</RelativeLayout>
