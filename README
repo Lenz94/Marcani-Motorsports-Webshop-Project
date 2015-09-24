@@ -1,4 +1,8 @@
-This is your new Play application
-=====================================
+#Marcani Motorsports Webshop Project
+<h3>Welcome to "Marcani Motorsports"!</3>
+A modern webshop that has your favorite cars from the most popular brands of the 00s, bringing you a decent service and fast delivery according to the adress of your account.
 
-This file will be packaged with your application, when using `play dist`.
+<h4>Things You can do as a User:</h4>
+- Login as a normal user with your email and password.
+- Select cars from different categories (Standard categories are: "Ferrari", "Audi" & "Lamborghini").
+- 
