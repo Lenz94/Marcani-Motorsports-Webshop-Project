@@ -23,7 +23,7 @@ A modern webshop that has your favorite cars from the most popular brands of the
  1. JDK 7
  2. EclipseEE
  3. Apache Tomcat 7 Server
- 4. Play Framework 2.2
+ 4. Play Framework 2.2 (Comes with this repository as "play")
  5. MySQL
 
 <h3>Setup</h3>
