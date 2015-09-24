@@ -1,9 +1,0 @@
-@* showNewUser Template File *@
-@(users: List[User])
-@main("CarWebshop"){
-	<img src="@routes.Assets.at("images/marcanicorp.jpg")" width="380" height="200" alt="ferrari"</img>
-	<h3>Welcome!</h3>
-	<h4>Become one of our estimated users by registering yourself into our shop.</h4>
-	<p></p>
-	<p><a href="@routes.UserController.newUserForm">New User</a></p>
-}
