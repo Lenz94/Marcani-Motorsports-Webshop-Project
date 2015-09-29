@@ -1,5 +1,8 @@
 
 # Marcani Motorsports Webshop Project
+
+ ![alt tag](https://raw.github.com/Lenz94/Marcani-Motorsports-Webshop-Project/master/screenshots/webshop_screenshot.jpg)
+ 
 <h3>Welcome to "Marcani Motorsports"!</h3>
 A modern webshop that has your favorite cars from the most popular brands of the 00s, bringing you a decent service and fast delivery according to the adress of your account.
 
